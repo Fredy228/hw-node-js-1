@@ -5,19 +5,12 @@ const uniqid = require('uniqid');
 const contactsPath = path.join('db', 'contacts.json');
 const resonse = fs.readFile(contactsPath, 'utf-8');
 
-/**
- * Get list all contacts
- */
 async function listContacts() {
   const data = await resonse;
 
   console.table(JSON.parse(data));
 }
 
-/**
- * Get contact by ID
- * @param {string} contactId
- */
 async function getContactById(contactId) {
   const data = await resonse;
 
@@ -27,10 +20,6 @@ async function getContactById(contactId) {
   console.log('Oops.... Not found contact :(');
 }
 
-/**
- * Delete contact by ID
- * @param {string} contactId
- */
 async function removeContact(contactId) {
   const data = await resonse;
 
@@ -47,12 +36,6 @@ async function removeContact(contactId) {
   console.log('Oops.... Not found contact :(');
 }
 
-/**
- * Add conatct
- * @param {string} name
- * @param {string} email
- * @param {string} phone
- */
 async function addContact(name, email, phone) {
   const data = await resonse;
 
